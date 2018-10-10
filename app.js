@@ -73,8 +73,8 @@ app.use(function(req,res,next){
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', usersignin);
-app.use('/admin/dashboard', admindashboard);
-app.use('/admin/dashboard/addCoordinator', addcoordinator);
+app.use('/admin', admindashboard);
+app.use('/admin/addCoordinator', addcoordinator);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
