@@ -10,15 +10,22 @@ var LocalStrategy = require('passport-local').strategy;
 var multer = require('multer');
 var upload = multer({ dest: './uploads'});
 var flash = require('connect-flash');
-var mongo = require('mongodb');
+
+
 var mongoose = require('mongoose');
+var mongoDB = 'mongodb://rakoo:rakoo123@ds227243.mlab.com:27243/gantavya2018';
+mongoose.connect(mongoDB,{  useNewUrlParser: true }).then(db=>{
+  console.log('mongo connected');
+}).catch(error=> console.log(error));
+//mongoose.Promise = global.Promise;
 var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var usersignin = require('./routes/auth/login');
 var admindashboard= require('./routes/admin/adminDashboard');
-var addcoordinator= require('./routes/admin/addCoordinator');
+var coordinator= require('./routes/admin/coordinator');
 
 
 
@@ -74,7 +81,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', usersignin);
 app.use('/admin', admindashboard);
-app.use('/admin/addCoordinator', addcoordinator);
+app.use('/admin/coordinator', coordinator);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
