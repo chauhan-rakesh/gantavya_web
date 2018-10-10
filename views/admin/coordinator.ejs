@@ -1,5 +1,61 @@
 <%- include('../layouts_admin/admin') %>
 
-<h1><%= title %></h1>
+<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Coordinators Registered</h3>
+
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Branch</th>
+                  <th>Year</th>
+                  <th>Gender</th>
+                  <th>College Id</th>
+                  <th>Contact no</th>
+                  <th>email</th>
+                  <th>password</th>
+                </tr>
+
+
+
+            <% coordinator.forEach(function(coordinator){  %>
+                <tr>
+
+                  <td><%= coordinator._id %></td>
+                  <td><%= coordinator.name %></td>
+                  <td><%= coordinator.branch %></td>
+                  <td><%= coordinator.year %></td>
+                  <td><%= coordinator.gender%></td>
+                  <td><%= coordinator.collegeId %></td>
+                  <td><%= coordinator.mobileNumber %></td>
+                  <td><%= coordinator.email %></td>
+                  <td><%= coordinator.password %></td>
+                  <td><a href="coordinator/edit/<%= coordinator._id %>" class="btn btn-info">Edit</a></td>
+                  <td><a href="coordinator/delete/<%= coordinator._id %>" class="btn btn-danger">X</a></td>
+                <% }) %>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
 
 <%- include('../layouts_admin/footer') %>

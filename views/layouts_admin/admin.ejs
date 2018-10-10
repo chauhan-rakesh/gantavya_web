@@ -68,12 +68,15 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Admin</li>
-        <li class="active treeview">
-          <a href="/admin/adminDashboard">
+        <li>
+          <a href="/admin">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-          </a>
+              <span class="pull-right-container">
 
+            </span>
+          </a>
         </li>
+
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
@@ -83,10 +86,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/admin/coordinators"><i class="fa fa-circle-o"></i> View </a></li>
-            <li><a href="/admin/addCoordinator"><i class="fa fa-circle-o"></i> Add </a></li>
-            <li><a href="/admin/editCoordinator"><i class="fa fa-circle-o"></i> Edit</a></li>
-            <li><a href="/admin/deleteCoordinator"><i class="fa fa-circle-o"></i>Delete</a></li>
+            <li><a href="/coordinator"><i class="fa fa-circle-o"></i> View </a></li>
+            <li><a href="/coordinator/add"><i class="fa fa-circle-o"></i> Add </a></li>
+          
           </ul>
         </li>
 
@@ -146,71 +148,7 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3><%  %>0</h3>
 
-              <p>Events</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-android-radio-button-on"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3><% %><sup style="font-size: 20px">%</sup></h3>
-
-              <p>Coordinators</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-android-contacts"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3><%  %>0</h3>
-
-              <p>User Registrations</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3><% %>0</h3>
-
-              <p>Unique Visitors</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
-      <!-- /.row -->
-      <!-- Main row -->
-
-        <div class="row">
                 <!-- Left col -->
 
       <!-- /.row (main row) -->

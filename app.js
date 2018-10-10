@@ -10,7 +10,7 @@ var LocalStrategy = require('passport-local').strategy;
 var multer = require('multer');
 var upload = multer({ dest: './uploads'});
 var flash = require('connect-flash');
-
+var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://rakoo:rakoo123@ds227243.mlab.com:27243/gantavya2018';
@@ -21,15 +21,23 @@ mongoose.connect(mongoDB,{  useNewUrlParser: true }).then(db=>{
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var usersignin = require('./routes/auth/login');
 var admindashboard= require('./routes/admin/adminDashboard');
-var coordinator= require('./routes/admin/coordinator');
+var coordinator= require('./routes/coordinator/coordinator');
+
 
 
 
 var app = express();
+
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,9 +46,9 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 //handle sessions
 app.use(session({
@@ -81,7 +89,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', usersignin);
 app.use('/admin', admindashboard);
-app.use('/admin/coordinator', coordinator);
+app.use('/coordinator', coordinator);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
