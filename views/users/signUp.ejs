@@ -12,22 +12,31 @@
     <div id="formContent">
       <!-- Tabs Titles -->
       <h2 class="active"> Sign Up </h2>
+      <!-- <ul>
+        <%if( !(typeof(errors) =="undefined")){%>
 
+        <% errors.foreach(function(errors){ %>
+        <li class= "alert alert-danger">  <%=errors.msg%> </li>
+       <% }) %>
+<%}%>
+      </ul> -->
 
       <!-- Icon -->
 
       <!-- Login Form -->
-      <form>
-        <input type="text" id="login" class="" name="name" placeholder="Name">
-        <input type="text" id="password" class="" name="email" placeholder="Email">
+      <form method="post" action="">
+        <input type="text" id="login" class="" name="name" placeholder="Name" >
+        <input type="text" id="password" class="" name="email" placeholder="Email" >
         <input type="text" id="login" class="" name="colllege_id" placeholder="College_Id">
-        <input type="text" id="password" class="" name="password" placeholder="password">
-        <input type="submit" class="" value="Sign Up">
+        <input type="password" id="password" class="" name="password" placeholder="password">
+        <input type="password" id="password" class="" name="password2" placeholder="password">
+        <button  class="" >Sign Up</button>
       </form>
 
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        <a class="underlineHover" href="#">Forgot Password?</a>
+        <p>Already signUp</p>
+        <a class="underlineHove" href="/auth/login">Login</a>
       </div>
 
     </div>

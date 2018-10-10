@@ -17,7 +17,10 @@ var db = mongoose.connection;
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var usersignin = require('./routes/auth/login');
-var usersignup = require('./routes/auth/signup');
+var admindashboard= require('./routes/admin/adminDashboard');
+var addcoordinator= require('./routes/admin/addCoordinator');
+
+
 
 var app = express();
 
@@ -69,9 +72,9 @@ app.use(function(req,res,next){
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/auth/login', usersignin);
-app.use('/auth/signup', usersignup);
-
+app.use('/auth', usersignin);
+app.use('/admin/dashboard', admindashboard);
+app.use('/admin/dashboard/addCoordinator', addcoordinator);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
