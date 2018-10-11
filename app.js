@@ -11,6 +11,9 @@ var multer = require('multer');
 var upload = multer({ dest: './uploads'});
 var flash = require('connect-flash');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+
+
 
 var mongoose = require('mongoose');
 var mongoDB = 'mongodb://rakoo:rakoo123@ds227243.mlab.com:27243/gantavya2018';
@@ -40,6 +43,7 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+app.use(methodOverride('_method'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

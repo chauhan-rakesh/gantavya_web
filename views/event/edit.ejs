@@ -12,7 +12,7 @@
 
            </div>
            <div class="col-md-8">
-             <form  action="/admin/event/add" method="post">
+             <form  action="/admin/event/edit/<%= event._id %>?_method=PUT" method="post">
                <div class="box-body">
                  <div class="form-group">
                    <label for="">Name</label>

@@ -51,6 +51,28 @@ router.get('/edit/:id', function(req, res, next) {
 });
 
 
+router.put('/edit/:id', (req,res)=>{
+  Coordinator.findOne({_id: req.params.id}).then(coordinator =>{
+      coordinator.name =  req.body.name;
+      coordinator.branch = req.body.branch;
+      coordinator.year=req.body.year;
+
+      coordinator.gender = req.body.gender;
+      coordinator.collegeId = req.body.collegeId;
+      coordinator.mobileNumber = req.body.mobileNumber;
+      coordinator.email = req.body.email;
+      coordinator.password =  req.body.password;
+
+        coordinator.save(updatedCoordinator =>{
+  res.redirect('/admin/coordinator');
+
+        });
+
+
+});
+});
+
+
 
 
 

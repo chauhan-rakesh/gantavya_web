@@ -48,4 +48,25 @@ router.get('/edit/:id', function(req, res, next) {
 
 });
 
+
+router.put('/edit/:id', (req,res)=>{
+  Event.findOne({_id: req.params.id}).then(event =>{
+
+    event.eventName =req.body.eventName;
+    event.branchConducting = req.body.branchConducting;
+    event.clubOrCell = req.body.clubOrCell;
+
+    event.timeAndDate = req.body.timeAndDate;
+    event.Eventdetails = req.body.Eventdetails;
+    event.EventFee = req.body.EventFee;
+    event.winAmt = req.body.winAmt;
+
+        event.save(updatedEvent =>{
+  res.redirect('/admin/event');
+
+        });
+});
+});
+
+
 module.exports = router;

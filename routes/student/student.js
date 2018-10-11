@@ -7,7 +7,7 @@ var Student = require('../../models/student');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  Student.find({}).then(event =>{
+  Student.find({}).then(student =>{
     res.render('admin/student',{student : student} );
   });
 });
@@ -43,10 +43,32 @@ router.post('/add', function(req, res, next) {
 //
 
 router.get('/edit/:id', function(req, res, next) {
-  Student.findOne({_id: req.params.id}).then(event =>{
+  Student.findOne({_id: req.params.id}).then(student=>{
     res.render('student/edit',{student: student} );
   });
 
+});
+
+
+router.put('/edit/:id', (req,res)=>{
+  Student.findOne({_id: req.params.id}).then(student =>{
+
+    student.studentName =  req.body.studentName;
+    student.branch = req.body.branch;
+    student.year = req.body.year;
+    student.gender = req.body.gender;
+    student.college =  req.body.college;
+    student.ContactNo = req.body.ContactNo;
+    student.Roll_no =  req.body.Roll_no;
+    student.Address = req.body.Address;
+    student.email = req.body.email;
+    student.password = req.body.password;
+
+        student.save(updatedStudent =>{
+  res.redirect('/admin/student');
+
+        });
+});
 });
 
 module.exports = router;
