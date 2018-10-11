@@ -1,0 +1,78 @@
+<%- include('../layouts_admin/admin') %>
+
+<div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Events Registered</h3>
+
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Branch Conducting</th>
+                  <th>Club/Cell</th>
+                  <th>Time and Date</th>
+                  <th>Event Details</th>
+                  <th>Event Fee</th>
+                  <th>Win Amount</th>
+
+                </tr>
+                <% event.forEach(function(event){  %>
+                    <tr>
+
+                      <td><%= event._id %></td>
+                      <td><%= event.eventName %></td>
+                      <td><%= event.branchConducting %></td>
+                      <td><%= event.clubOrCell %></td>
+                      <td><%= event.timeAndDate %></td>
+                      <td><%= event.Eventdetails %></td>
+                      <td><%= event.EventFee %></td>
+                      <td><%= event.winAmt %></td>
+                      <td><a href="event/edit/<%= event._id %>" class="btn btn-info">Edit</a></td>
+                      <td>  <button type="button" class="btn btn-danger"data-toggle="modal" data-target="#modal-warning" >
+                                      X
+                          </button></td>
+    <% }) %>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <div class="modal modal-danger fade" id="modal-warning">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span></button>
+             <p>Delete </p>
+           </div>
+           <div class="modal-body">
+             <p>Do you like to delete <strong><%=  %></strong> </p>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+             <button type="button" class="btn btn-outline">Save changes</button>
+           </div>
+         </div>
+         <!-- /.modal-content -->
+       </div>
+       <!-- /.modal-dialog -->
+     </div>
+<%- include('../layouts_admin/footer') %>

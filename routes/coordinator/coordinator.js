@@ -20,7 +20,7 @@ router.get('/add', function(req, res, next) {
 });
 
 router.post('/add', function(req, res, next) {
-  if(req.body.mobileNumber)
+
 
   var newCoordinator =new Coordinator({
     name: req.body.name,
@@ -35,7 +35,7 @@ router.post('/add', function(req, res, next) {
   });
 
   newCoordinator.save().then(savedCoordinator =>{
-    res.redirect('/coordinator');
+    res.redirect('/admin/coordinator');
   }).catch(error =>{
     console.log('could not save data'+ error);
   });

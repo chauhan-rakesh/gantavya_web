@@ -28,6 +28,8 @@ var usersRouter = require('./routes/users');
 var usersignin = require('./routes/auth/login');
 var admindashboard= require('./routes/admin/adminDashboard');
 var coordinator= require('./routes/coordinator/coordinator');
+var events = require('./routes/event/event');
+var students = require('./routes/student/student');
 
 
 
@@ -89,7 +91,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/auth', usersignin);
 app.use('/admin', admindashboard);
-app.use('/coordinator', coordinator);
+app.use('/admin/coordinator', coordinator);
+app.use('/admin/event', events);
+app.use('/admin/student', students);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -4,7 +4,7 @@
          <!-- general form elements -->
          <div class="box box-primary">
            <div class="box-header with-border">
-             <h3 class="box-title">Edit Coordinators</h3>
+             <h3 class="box-title">Add Student</h3>
            </div>
            <!-- /.box-header -->
            <!-- form start -->
@@ -12,16 +12,16 @@
 
            </div>
            <div class="col-md-8">
-             <form  action="/admin/coordinator/add" method="post">
+             <form  action="/admin/student/add" method="post">
                <div class="box-body">
                  <div class="form-group">
                    <label for="">Name</label>
-                   <input type="text" class="form-control" name="name" value="<%= coordinator.name %>">
+                   <input type="text" class="form-control" name="studentName" placeholder="Enter Name">
                  </div>
                  <div class="form-group">
                 <label>Branch</label>
-                <select class="form-control select2" name="branch"  style="width: 100%;">
-                   <option selected="<%= coordinator.branch %>">Select</option>
+                <select class="form-control select2" name="branch" style="width: 100%;">
+                   <option selected="selected">Select</option>
                   <option >CSE</option>
                   <option>IT</option>
                   <option>ME</option>
@@ -33,32 +33,40 @@
               </div>
                  <div class="form-group">
                    <label for="">Year</label>
-                   <input type="number" class="form-control" name="year" value="<%= coordinator.year %>">
+                   <input type="number" class="form-control" name="year" placeholder="Year">
                  </div>
                  <div class="form-group">
                    <label>Gender</label>
                    <select class="form-control select2" name="gender" style="width: 100%;">
-                     <option selected="<%= coordinator.gender %>">Select</option>
+                     <option selected="selected">Select</option>
                      <option>Male</option>
                      <option>Female</option>
                      <option>Transgender</option>
                    </select>
                  </div>
                  <div class="form-group">
-                   <label for="">College Id.</label>
-                   <input type="text" class="form-control" name="collegeId" value="<%= coordinator.collegeId %>">
+                   <label for="">College</label>
+                   <input type="text" class="form-control" name="college" placeholder="College">
                  </div>
                  <div class="form-group">
                    <label for="">Contact No.</label>
-                   <input type="number" class="form-control" name="mobileNumber" <%= coordinator.mobileNumber %>>
+                   <input type="number" class="form-control" name="ContactNo" placeholder="Mobile Number">
+                 </div>
+                 <div class="form-group">
+                   <label for="">Roll No.</label>
+                   <input type="number" class="form-control" name="Roll_no" placeholder="Roll No or College Id">
+                 </div>
+                 <div class="form-group">
+                   <label for="">Address</label>
+                   <input type="number" class="form-control" name="Address" placeholder="Address">
                  </div>
                  <div class="form-group">
                    <label for="">Email address</label>
-                   <input type="email" class="form-control" name="email" placeholder="Enter email" value="<%= coordinator.email %>">
+                   <input type="email" class="form-control" name="email" placeholder="Email">
                  </div>
                  <div class="form-group">
                    <label for="">Password</label>
-                   <input type="password" class="form-control" name="password" placeholder="Password" value="<%= coordinator.password %>">
+                   <input type="password" class="form-control" name="password" placeholder="Password">
                  </div>
 
                            <div class="box-footer">

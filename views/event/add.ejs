@@ -1,0 +1,58 @@
+<%- include('./../layouts_admin/admin') %>
+
+<div class="col-md-12">
+         <!-- general form elements -->
+         <div class="box box-primary">
+           <div class="box-header with-border">
+             <h3 class="box-title">Add Coordinator</h3>
+           </div>
+           <!-- /.box-header -->
+           <!-- form start -->
+           <div class="col-md-2">
+
+           </div>
+           <div class="col-md-8">
+             <form  action="/admin/event" method="post">
+               <div class="box-body">
+                 <div class="form-group">
+                   <label for="">Name</label>
+                   <input type="text" class="form-control" name="eventName" placeholder="Enter Name">
+                 </div>
+                 <div class="form-group">
+                <label>Branch Conducting</label>
+              <input type="text" class="form-control" name="branchConducting" placeholder="Branch Conducting">
+              </div>
+                 <div class="form-group">
+                   <label for="">Club or Cell</label>
+                   <input type="text" class="form-control" name="clubOrCell" placeholder="Club or Cell">
+                 </div>
+                 <div class="form-group">
+                   <label for="">Time and Date</label>
+                   <input type="text" class="form-control" name="timeAndDate" placeholder="Time and Date">
+                 </div>
+                 <div class="form-group">
+                   <label for="">Event Task & Details</label>
+                   <textarea class="form-control"  rows="10" name="Eventdetails" placeholder="Details"></textarea>
+                 </div>
+                 <div class="form-group">
+                   <label for="">Registration Fee</label>
+
+                   <input type="text" class="form-control" name="EventFee" placeholder="Registration Fee">
+                 </div>
+                 <div class="form-group">
+                   <label for="">Winning Amount</label>
+                   <input type="text" class="form-control" name="winAmt" placeholder="Winning Amount">
+                 </div>
+
+                           <div class="box-footer">
+                 <button type="submit" class="btn btn-primary">Submit</button>
+               </div>
+             </form>
+           </div>
+
+           <div class="col-md-2">
+
+           </div>
+         </div>
+</div>
+<%- include('./../layouts_admin/footer') %>
