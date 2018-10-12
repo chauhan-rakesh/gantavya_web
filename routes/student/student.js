@@ -23,11 +23,10 @@ router.post('/add', function(req, res, next) {
     studentName: req.body.studentName,
     branch:req.body.branch,
     year:req.body.year,
-    gender:req.body.gender,
     college: req.body.college,
     ContactNo:req.body.ContactNo,
     Roll_no: req.body.Roll_no,
-    Address: req.body.Address,
+
     email: req.body.email,
     password: req.body.password
 
@@ -56,11 +55,11 @@ router.put('/edit/:id', (req,res)=>{
     student.studentName =  req.body.studentName;
     student.branch = req.body.branch;
     student.year = req.body.year;
-    student.gender = req.body.gender;
+
     student.college =  req.body.college;
     student.ContactNo = req.body.ContactNo;
     student.Roll_no =  req.body.Roll_no;
-    student.Address = req.body.Address;
+
     student.email = req.body.email;
     student.password = req.body.password;
 

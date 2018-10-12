@@ -15,34 +15,47 @@
              <form  action="/admin/event/edit/<%= event._id %>?_method=PUT" method="post">
                <div class="box-body">
                  <div class="form-group">
-                   <label for="">Name</label>
-                   <input type="text" class="form-control" name="eventName" value="<%= event.eventName %>" placeholder="">
+                   <label for="">Event Name</label>
+                   <input type="text" class="form-control" name="eventName" value="<%= event.eventName %>" placeholder="Enter Name">
                  </div>
                  <div class="form-group">
-                <label>Branch Conducting</label>
-              <input type="text" class="form-control" name="branchConducting" value="<%= event.branchConducting %>" placeholder="">
+                <label>Department </label>
+              <input type="text" class="form-control" name="branchConducting" value="<%= event.branchConducting %>" placeholder="Branch Conducting">
               </div>
                  <div class="form-group">
-                   <label for="">Club or Cell</label>
-                   <input type="text" class="form-control" name="clubOrCell" value="<%= event.clubOrCell %>" placeholder="">
+                   <label for="">Club/Cell</label>
+                   <input type="text" class="form-control" name="clubOrCell" value="<%= event.clubOrCell %>" placeholder="Club or Cell">
                  </div>
                  <div class="form-group">
-                   <label for="">Time and Date</label>
-                   <input type="text" class="form-control" name="timeAndDate" value="<%= event.timeAndDate %>" placeholder="">
+                   <label for="">Faculty Coordinator</label>
+                   <textarea class="form-control"  rows="10" name="facultyCoordinator" value="" placeholder="Faculty Coordinator"><%= event.facultyCoordinator %></textarea>
+                 </div>
+                 <div class="form-group">
+                   <label for="">Student Coordinator</label>
+                   <textarea class="form-control"  rows="10" name="studentCoordinator" value="" placeholder="Student Coordinator"><%= event.studentCoordinator %></textarea>
+                 </div>
+                 <div class="form-group">
+                   <label for="">Date and Timings</label>
+                   <input type="text" class="form-control" name="timeAndDate" value="<%= event.timeAndDate %>" placeholder="Octuber 10,2018 , 2:00:00 p.m - 4:30:00 p.m">
+                 </div>
+                 <div class="form-group">
+                   <label for="">Venue</label>
+                   <input type="text" class="form-control" name="venue" value="<%= event.venue %>" placeholder="Venue">
                  </div>
                  <div class="form-group">
                    <label for="">Event Task & Details</label>
-                   <textarea class="form-control"  rows="10" name="Eventdetails" value="<%= event.Eventdetails %>" placeholder=""></textarea>
+                   <textarea class="form-control"  rows="20" name="Eventdetails"value=""  placeholder="Details + Rules"><%= event.Eventdetails %></textarea>
                  </div>
                  <div class="form-group">
                    <label for="">Registration Fee</label>
 
-                   <input type="text" class="form-control" name="EventFee" value="<%= event.EventFee %>" placeholder="">
+                   <input type="text" class="form-control" name="EventFee" value="<%= event.EventFee %>" placeholder="Rs.50/- per Person">
                  </div>
                  <div class="form-group">
-                   <label for="">Winning Amount</label>
-                   <input type="text" class="form-control" name="winAmt" value="<%= event.winAmt %>" placeholder="">
+                   <label for="">Prize</label>
+                   <input type="text" class="form-control" name="winAmt" value="<%= event.winAmt %>" placeholder="Prize">
                  </div>
+
 
                            <div class="box-footer">
                  <button type="submit" class="btn btn-primary">Submit</button>

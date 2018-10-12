@@ -12,10 +12,11 @@ var flash = require('connect-flash');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var upload = require('express-fileupload');
+var {mongoDbUrl} = require('./config/database');
 
 
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://rakoo:rakoo123@ds227243.mlab.com:27243/gantavya2018';
+var mongoDB = mongoDbUrl;
 mongoose.connect(mongoDB,{  useNewUrlParser: true }).then(db=>{
   console.log('mongo connected');
 }).catch(error=> console.log(error));
@@ -33,6 +34,9 @@ var coordinator= require('./routes/coordinator/coordinator');
 var events = require('./routes/event/event');
 var students = require('./routes/student/student');
 var CoordinatorDashboard = require('./routes/CoordinatorDashboard/Dashboard/dashboard');
+var CoordinatorAdd= require('./routes/CoordinatorDashboard/coordinator/coordinator');
+var CoordinatorEvents = require('./routes/CoordinatorDashboard/event/event');
+var Coordinatorstudents = require('./routes/CoordinatorDashboard/student/student');
 
 
 
@@ -103,6 +107,9 @@ app.use('/admin/coordinator', coordinator);
 app.use('/admin/event', events);
 app.use('/admin/student', students);
 app.use('/CoordinatorDashboard', CoordinatorDashboard);
+app.use('/CoordinatorDashboard/coordinator', CoordinatorAdd);
+app.use('/CoordinatorDashboard/event',CoordinatorEvents);
+app.use('/CoordinatorDashboard/student', Coordinatorstudents);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

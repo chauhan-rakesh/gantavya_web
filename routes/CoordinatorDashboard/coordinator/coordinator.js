@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var Coordinator = require('../../models/coordinator');
+var Coordinator = require('../../../models/coordinator');
 //var coordinator_controller = require('../controllers/coordinator/coordController');
 
 
@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/add', function(req, res, next) {
-  res.render('coordinator/add', { title:' add coordinator'});
+  res.render('CoordinatorDashboard/coordinator/add', { title:' add coordinator'});
 });
 
 router.post('/add', function(req, res, next) {
@@ -27,8 +27,6 @@ router.post('/add', function(req, res, next) {
     name: req.body.name,
     branch:req.body.branch,
     year:req.body.year,
-
-    gender:req.body.gender,
     collegeId: req.body.collegeId,
     mobileNumber:req.body.mobileNumber,
     email: req.body.email,
@@ -46,7 +44,7 @@ router.post('/add', function(req, res, next) {
 
 router.get('/edit/:id', function(req, res, next) {
   Coordinator.findOne({_id: req.params.id}).then(coordinator =>{
-    res.render('coordinator/edit',{coordinator: coordinator} );
+    res.render('CoordinatorDashboard/coordinator/edit',{coordinator: coordinator} );
   });
 
 });
@@ -57,15 +55,13 @@ router.put('/edit/:id', (req,res)=>{
       coordinator.name =  req.body.name;
       coordinator.branch = req.body.branch;
       coordinator.year=req.body.year;
-
-      coordinator.gender = req.body.gender;
       coordinator.collegeId = req.body.collegeId;
       coordinator.mobileNumber = req.body.mobileNumber;
       coordinator.email = req.body.email;
       coordinator.password =  req.body.password;
 
         coordinator.save(updatedCoordinator =>{
-  res.redirect('/admin/coordinator');
+  res.redirect('/CoordinatorDashboard/coordinator/view');
 
         });
     });
@@ -76,7 +72,7 @@ router.delete('/:id',( req, res)=>{
 Coordinator.remove({_id: req.params.id})
 .then(result=>{
 
-        res.redirect('/admin/coordinator');
+        res.redirect('/CoordinatorDashboard/coordinator/view');
       });
 });
 

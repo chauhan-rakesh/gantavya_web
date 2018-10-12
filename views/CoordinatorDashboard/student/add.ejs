@@ -12,14 +12,14 @@
 
            </div>
            <div class="col-md-8">
-             <form  action="/admin/student/add" method="post">
+             <form  action="/CoordinatorDashboard/student/add" method="post">
                <div class="box-body">
                  <div class="form-group">
                    <label for="">Name</label>
                    <input type="text" class="form-control" name="studentName" placeholder="Enter Name">
                  </div>
                  <div class="form-group">
-                <label>Branch</label>
+                <label>Branch/Course</label>
                 <select class="form-control select2" name="branch" style="width: 100%;">
                    <option selected="selected">Select</option>
                   <option >CSE</option>
@@ -29,21 +29,17 @@
                   <option>EC</option>
                   <option>EN</option>
                   <option>EE</option>
+                  <option>BCA</option>
+                  <option>BBA</option>
+                  <option>MCA</option>
+                  <option>MBA</option>
                 </select>
               </div>
                  <div class="form-group">
                    <label for="">Year</label>
                    <input type="number" class="form-control" name="year" placeholder="Year">
                  </div>
-                 <div class="form-group">
-                   <label>Gender</label>
-                   <select class="form-control select2" name="gender" style="width: 100%;">
-                     <option selected="selected">Select</option>
-                     <option>Male</option>
-                     <option>Female</option>
 
-                   </select>
-                 </div>
                  <div class="form-group">
                    <label for="">College</label>
                    <input type="text" class="form-control" name="college" placeholder="College">
@@ -56,10 +52,7 @@
                    <label for="">Roll No.</label>
                    <input type="number" class="form-control" name="Roll_no" placeholder="Roll No or College Id">
                  </div>
-                 <div class="form-group">
-                   <label for="">Address</label>
-                   <input type="number" class="form-control" name="Address" placeholder="Address">
-                 </div>
+
                  <div class="form-group">
                    <label for="">Email address</label>
                    <input type="email" class="form-control" name="email" placeholder="Email">

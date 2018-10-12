@@ -1,4 +1,4 @@
-<%- include('./../layouts_admin/admin') %>
+<%- include('./../layouts_coordinator/admin') %>
 
 <div class="col-md-12">
          <!-- general form elements -->
@@ -12,16 +12,16 @@
 
            </div>
            <div class="col-md-8">
-             <form  action="/admin/student/edit/<%= student._id %>?_method=PUT" method="post">
+             <form  action="/CoordinatorDashboard/student/edit" method="post">
                <div class="box-body">
                  <div class="form-group">
                    <label for="">Name</label>
-                   <input type="text" class="form-control" name="studentName" value="<%= student.studentName %>" placeholder="">
+                   <input type="text" class="form-control" name="studentName" placeholder="Enter Name">
                  </div>
                  <div class="form-group">
-                <label>Branch</label>
-                <select class="form-control select2" value="<%= student.branch %>" name="branch" style="width: 100%;">
-                   <option selected="selected" >Select</option>
+                <label>Branch/Course</label>
+                <select class="form-control select2" name="branch" style="width: 100%;">
+                   <option selected="selected">Select</option>
                   <option >CSE</option>
                   <option>IT</option>
                   <option>ME</option>
@@ -29,44 +29,37 @@
                   <option>EC</option>
                   <option>EN</option>
                   <option>EE</option>
+                  <option>BCA</option>
+                  <option>BBA</option>
+                  <option>MCA</option>
+                  <option>MBA</option>
                 </select>
               </div>
                  <div class="form-group">
                    <label for="">Year</label>
-                   <input type="number" class="form-control" name="year" value="<%= student.year %>" placeholder="Year">
+                   <input type="number" class="form-control" name="year" placeholder="Year">
                  </div>
-                 <div class="form-group">
-                   <label>Gender</label>
-                   <select class="form-control select2" name="gender" value="<%= student.gender %>" style="width: 100%;">
-                     <option selected="selected">Select</option>
-                     <option>Male</option>
-                     <option>Female</option>
-                    
-                   </select>
-                 </div>
+
                  <div class="form-group">
                    <label for="">College</label>
-                   <input type="text" class="form-control" name="college" value="<%= student.college %>" placeholder="College">
+                   <input type="text" class="form-control" name="college" placeholder="College">
                  </div>
                  <div class="form-group">
                    <label for="">Contact No.</label>
-                   <input type="number" class="form-control" name="ContactNo" value="<%= student.ContactNo %>" placeholder="Mobile Number">
+                   <input type="number" class="form-control" name="ContactNo" placeholder="Mobile Number">
                  </div>
                  <div class="form-group">
                    <label for="">Roll No.</label>
-                   <input type="text" class="form-control" name="Roll_no" value="<%= student.Roll_no %>" placeholder="Roll No or College Id">
+                   <input type="number" class="form-control" name="Roll_no" placeholder="Roll No or College Id">
                  </div>
-                 <div class="form-group">
-                   <label for="">Address</label>
-                   <input type="text" class="form-control" name="Address" value="<%= student.Address %>"  placeholder="Address">
-                 </div>
+
                  <div class="form-group">
                    <label for="">Email address</label>
-                   <input type="email" class="form-control" name="email"  value="<%= student.email %>" placeholder="Email">
+                   <input type="email" class="form-control" name="email" placeholder="Email">
                  </div>
                  <div class="form-group">
                    <label for="">Password</label>
-                   <input type="password" class="form-control" name="password"  value="<%= student.password %>" placeholder="Password">
+                   <input type="password" class="form-control" name="password" placeholder="Password">
                  </div>
 
                            <div class="box-footer">
@@ -80,4 +73,4 @@
            </div>
          </div>
 </div>
-<%- include('./../layouts_admin/footer') %>
+<%- include('./../layouts_coordinator/footer') %>

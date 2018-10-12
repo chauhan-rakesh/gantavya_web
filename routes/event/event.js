@@ -24,9 +24,11 @@ router.post('/add', function(req, res, next) {
     eventName: req.body.eventName,
     branchConducting:req.body.branchConducting,
     clubOrCell:req.body.clubOrCell,
-
+    facultyCoordinator:req.body.facultyCoordinator,
+    studentCoordinator:req.body.studentCoordinator,
     timeAndDate:req.body.timeAndDate,
     Eventdetails: req.body.Eventdetails,
+    venue:req.body.venue,
     EventFee:req.body.EventFee,
     winAmt: req.body.winAmt
 
@@ -55,12 +57,14 @@ router.put('/edit/:id', (req,res)=>{
     event.eventName =req.body.eventName;
     event.branchConducting = req.body.branchConducting;
     event.clubOrCell = req.body.clubOrCell;
-
+    event.facultyCoordinator=req.body.facultyCoordinator;
+    event.studentCoordinator=req.body.studentCoordinator;
     event.timeAndDate = req.body.timeAndDate;
     event.Eventdetails = req.body.Eventdetails;
+    event.venue = req.body.venue;
     event.EventFee = req.body.EventFee;
     event.winAmt = req.body.winAmt;
-
+console.log(req.body.facultyCoordinator);
         event.save(updatedEvent =>{
   res.redirect('/admin/event');
 

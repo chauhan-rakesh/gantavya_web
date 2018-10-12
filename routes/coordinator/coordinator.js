@@ -20,7 +20,7 @@ router.get('/add', function(req, res, next) {
 });
 
 router.post('/add', function(req, res, next) {
-  
+
 
 
   var newCoordinator =new Coordinator({
@@ -28,7 +28,7 @@ router.post('/add', function(req, res, next) {
     branch:req.body.branch,
     year:req.body.year,
 
-    gender:req.body.gender,
+
     collegeId: req.body.collegeId,
     mobileNumber:req.body.mobileNumber,
     email: req.body.email,
@@ -58,7 +58,7 @@ router.put('/edit/:id', (req,res)=>{
       coordinator.branch = req.body.branch;
       coordinator.year=req.body.year;
 
-      coordinator.gender = req.body.gender;
+    
       coordinator.collegeId = req.body.collegeId;
       coordinator.mobileNumber = req.body.mobileNumber;
       coordinator.email = req.body.email;

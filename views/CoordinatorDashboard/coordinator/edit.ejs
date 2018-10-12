@@ -12,7 +12,7 @@
 
            </div>
            <div class="col-md-8">
-             <form  action="/admin/coordinator/edit/<%= coordinator._id %>?_method=PUT" method="post">
+             <form  action="/CoordinatorDashboard/coordinator/edit/<%= coordinator._id %>?_method=PUT" method="post">
                <div class="box-body">
                  <div class="form-group">
                    <label for="">Name</label>
@@ -29,28 +29,24 @@
                   <option>EC</option>
                   <option>EN</option>
                   <option>EE</option>
+                  <option>BCA</option>
+                  <option>BBA</option>
+                  <option>MCA</option>
+                  <option>MBA</option>
                 </select>
               </div>
                  <div class="form-group">
                    <label for="">Year</label>
                    <input type="number" class="form-control" name="year" value="<%= coordinator.year %>">
                  </div>
-                 <div class="form-group">
-                   <label>Gender</label>
-                   <select class="form-control select2" name="gender" style="width: 100%;">
-                     <option selected="<%= coordinator.gender %>">Select</option>
-                     <option>Male</option>
-                     <option>Female</option>
 
-                   </select>
-                 </div>
                  <div class="form-group">
                    <label for="">College Id.</label>
                    <input type="text" class="form-control" name="collegeId" value="<%= coordinator.collegeId %>">
                  </div>
                  <div class="form-group">
                    <label for="">Contact No.</label>
-                   <input type="number" class="form-control" name="mobileNumber" <%= coordinator.mobileNumber %>>
+                   <input type="text" class="form-control" name="mobileNumber" <%= coordinator.mobileNumber %>>
                  </div>
                  <div class="form-group">
                    <label for="">Email address</label>
