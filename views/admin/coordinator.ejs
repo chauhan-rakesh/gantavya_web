@@ -44,10 +44,11 @@
                   <td><%= coordinator.mobileNumber %></td>
                   <td><%= coordinator.email %></td>
                   <td><%= coordinator.password %></td>
-                  <td><a href="coordinator/edit/<%= coordinator._id %>" class="btn btn-info">Edit</a></td>
-                  <td>  <button type="button" class="btn btn-danger"data-toggle="modal" data-target="#modal-warning" >
-                                  X
-                      </button></td>
+                  <td><a href="coordinator/edit/<%= coordinator._id %>" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></a></td>
+                  <td>    <form action="/admin/coordinator/<%= coordinator._id %>?_method=DELETE" method="post">
+                      <button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </form>
+
 <% }) %>
               </table>
             </div>
@@ -59,27 +60,5 @@
     </section>
     <!-- /.content -->
   </div>
-
-
-    <div class="modal modal-danger fade" id="modal-warning">
-         <div class="modal-dialog">
-           <div class="modal-content">
-             <div class="modal-header">
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                 <span aria-hidden="true">&times;</span></button>
-               <p>Delete </p>
-             </div>
-             <div class="modal-body">
-               <p>Do you like to delete <strong><%=  %></strong> </p>
-             </div>
-             <div class="modal-footer">
-               <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
-               <button type="button" class="btn btn-outline">Save changes</button>
-             </div>
-           </div>
-           <!-- /.modal-content -->
-         </div>
-         <!-- /.modal-dialog -->
-       </div>
 
 <%- include('../layouts_admin/footer') %>

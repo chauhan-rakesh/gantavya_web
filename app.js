@@ -8,11 +8,10 @@ var expressValidator = require('express-validator');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').strategy;
 var multer = require('multer');
-var upload = multer({ dest: './uploads'});
 var flash = require('connect-flash');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-
+var upload = require('express-fileupload');
 
 
 var mongoose = require('mongoose');
@@ -33,6 +32,7 @@ var admindashboard= require('./routes/admin/adminDashboard');
 var coordinator= require('./routes/coordinator/coordinator');
 var events = require('./routes/event/event');
 var students = require('./routes/student/student');
+var CoordinatorDashboard = require('./routes/CoordinatorDashboard/Dashboard/dashboard');
 
 
 
@@ -48,6 +48,10 @@ app.use(methodOverride('_method'));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+//upload middleware
+
+app.use(upload());
 
 
 app.use(logger('dev'));
@@ -98,6 +102,7 @@ app.use('/admin', admindashboard);
 app.use('/admin/coordinator', coordinator);
 app.use('/admin/event', events);
 app.use('/admin/student', students);
+app.use('/CoordinatorDashboard', CoordinatorDashboard);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

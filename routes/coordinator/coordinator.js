@@ -20,6 +20,7 @@ router.get('/add', function(req, res, next) {
 });
 
 router.post('/add', function(req, res, next) {
+  
 
 
   var newCoordinator =new Coordinator({
@@ -67,11 +68,17 @@ router.put('/edit/:id', (req,res)=>{
   res.redirect('/admin/coordinator');
 
         });
-
-
-});
+    });
 });
 
+router.delete('/:id',( req, res)=>{
+
+Coordinator.remove({_id: req.params.id})
+.then(result=>{
+
+        res.redirect('/admin/coordinator');
+      });
+});
 
 
 

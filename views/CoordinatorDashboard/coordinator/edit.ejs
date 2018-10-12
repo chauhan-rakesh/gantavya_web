@@ -1,0 +1,75 @@
+<%- include('./../layouts_coordinator/admin') %>
+
+<div class="col-md-12">
+         <!-- general form elements -->
+         <div class="box box-primary">
+           <div class="box-header with-border">
+             <h3 class="box-title">Edit Coordinators</h3>
+           </div>
+           <!-- /.box-header -->
+           <!-- form start -->
+           <div class="col-md-2">
+
+           </div>
+           <div class="col-md-8">
+             <form  action="/admin/coordinator/edit/<%= coordinator._id %>?_method=PUT" method="post">
+               <div class="box-body">
+                 <div class="form-group">
+                   <label for="">Name</label>
+                   <input type="text" class="form-control" name="name" value="<%= coordinator.name %>">
+                 </div>
+                 <div class="form-group">
+                <label>Branch</label>
+                <select class="form-control select2" name="branch"  style="width: 100%;">
+                   <option selected="<%= coordinator.branch %>">Select</option>
+                  <option >CSE</option>
+                  <option>IT</option>
+                  <option>ME</option>
+                  <option>CE</option>
+                  <option>EC</option>
+                  <option>EN</option>
+                  <option>EE</option>
+                </select>
+              </div>
+                 <div class="form-group">
+                   <label for="">Year</label>
+                   <input type="number" class="form-control" name="year" value="<%= coordinator.year %>">
+                 </div>
+                 <div class="form-group">
+                   <label>Gender</label>
+                   <select class="form-control select2" name="gender" style="width: 100%;">
+                     <option selected="<%= coordinator.gender %>">Select</option>
+                     <option>Male</option>
+                     <option>Female</option>
+
+                   </select>
+                 </div>
+                 <div class="form-group">
+                   <label for="">College Id.</label>
+                   <input type="text" class="form-control" name="collegeId" value="<%= coordinator.collegeId %>">
+                 </div>
+                 <div class="form-group">
+                   <label for="">Contact No.</label>
+                   <input type="number" class="form-control" name="mobileNumber" <%= coordinator.mobileNumber %>>
+                 </div>
+                 <div class="form-group">
+                   <label for="">Email address</label>
+                   <input type="email" class="form-control" name="email" placeholder="Enter email" value="<%= coordinator.email %>">
+                 </div>
+                 <div class="form-group">
+                   <label for="">Password</label>
+                   <input type="password" class="form-control" name="password" placeholder="Password" value="<%= coordinator.password %>">
+                 </div>
+
+                           <div class="box-footer">
+                 <button type="submit" class="btn btn-primary">Submit</button>
+               </div>
+             </form>
+           </div>
+
+           <div class="col-md-2">
+
+           </div>
+         </div>
+</div>
+<%- include('./../layouts_coordinator/footer') %>
