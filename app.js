@@ -49,6 +49,24 @@ app.use(bodyParser.json());
 
 app.use(methodOverride('_method'));
 
+
+//handle sessions
+app.use(session({
+  secret:'secret',
+  saveUninitialized: true,
+  resave: true
+}));
+// flash
+app.use(flash());
+
+//flash global variable
+app.use(function(req,res,next){
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -64,12 +82,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
 
-//handle sessions
-app.use(session({
-  secret:'secret',
-  saveUninitialized: true,
-  resave: true
-}));
+
 
 //passport
 app.use(passport.initialize());

@@ -35,7 +35,7 @@ router.post('/add', function(req, res, next) {
   });
 
   newStudent.save().then(savedEvent =>{
-    res.redirect('/CoordinatorDashboard/student/view');
+    res.redirect('/CoordinatorDashboard/view');
   }).catch(error =>{
     console.log('could not save data'+ error);
   });
@@ -95,14 +95,16 @@ router.post('/addEvent', function(req, res, next) {
     var newEnrollEvent =new enrollEvent ({
       name: req.body.studentName,
       collegeId:req.body.collegeId,
-      event: req.body.event
+      event: [req.body.event]
 
     });
 
     newEnrollEvent.save(newEnrollEvent =>{
-  res.redirect('CoordinatorDashboard/student/view');
+  res.redirect('CoordinatorDashboard/student/addEvent');
 
     });
+  }else{
+    console.log("not in data");
   }
 
 

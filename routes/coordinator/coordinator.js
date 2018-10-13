@@ -58,7 +58,7 @@ router.put('/edit/:id', (req,res)=>{
       coordinator.branch = req.body.branch;
       coordinator.year=req.body.year;
 
-    
+
       coordinator.collegeId = req.body.collegeId;
       coordinator.mobileNumber = req.body.mobileNumber;
       coordinator.email = req.body.email;
@@ -75,7 +75,7 @@ router.delete('/:id',( req, res)=>{
 
 Coordinator.remove({_id: req.params.id})
 .then(result=>{
-
+        req.flash('success_msg', 'Coordinator is Deleted');
         res.redirect('/admin/coordinator');
       });
 });

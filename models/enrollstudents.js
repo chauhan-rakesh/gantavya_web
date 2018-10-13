@@ -8,7 +8,7 @@ var EnrollStudentSchema = new Schema(
 
     collegeId: {type: String},
 
-    event: {type: String},
+    event: [{type: String}],
 
 
 

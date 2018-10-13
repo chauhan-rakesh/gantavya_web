@@ -64,7 +64,7 @@ router.put('/edit/:id', (req,res)=>{
     event.venue = req.body.venue;
     event.EventFee = req.body.EventFee;
     event.winAmt = req.body.winAmt;
-console.log(req.body.facultyCoordinator);
+
         event.save(updatedEvent =>{
   res.redirect('/admin/event');
 
